@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="root" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="640.0" style="-fx-background-color: #F5F6F7;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaobjectbuilder.UIController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutY="34.0" prefHeight="103.0" prefViewportHeight="101.0" prefViewportWidth="640.0" prefWidth="640.0" style="-fx-border-width: 0px; -fx-background-insets: 0px 0px; -fx-background-color: none;" vbarPolicy="NEVER" vmax="0.0">
+         <content>
+            <AnchorPane>
+               <children>
+                  <AnchorPane fx:id="mst_titlePane">
+                     <children>
+                        <Rectangle fill="DODGERBLUE" height="100.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="640.0" />
+                        <Rectangle fill="#cfffec" height="100.0" layoutX="71.0" layoutY="1.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+                        <Text fill="WHITE" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Java Object Builder Genarator" textAlignment="CENTER" wrappingWidth="640.0">
+                           <font>
+                              <Font name="System Bold" size="33.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="mst_MessagePane" prefHeight="101.0" prefWidth="640.0" style="-fx-background-color: #333;" translateY="101.0">
+                     <children>
+                        <Label fx:id="mst_Message" layoutX="98.0" layoutY="7.0" prefHeight="84.0" prefWidth="526.0" text="Please Insert fully colified class name with package details atherwise I can not find class then I have to genarate an error..!" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <GridPane fx:id="mst_logo" hgap="2.0" layoutX="28.0" layoutY="29.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #333;" vgap="2.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Rectangle fx:id="rect01" arcHeight="10.0" arcWidth="10.0" fill="#00da7f" height="19.0" stroke="#333333" strokeType="INSIDE" strokeWidth="0.0" width="19.0" />
+                              <Rectangle fx:id="rect02" arcHeight="10.0" arcWidth="10.0" fill="#ffb51e" height="19.0" stroke="#333333" strokeType="INSIDE" strokeWidth="0.0" width="19.0" GridPane.columnIndex="1" />
+                              <Rectangle fx:id="rect03" arcHeight="10.0" arcWidth="10.0" fill="DODGERBLUE" height="19.0" stroke="#333333" strokeType="INSIDE" strokeWidth="0.0" width="19.0" GridPane.rowIndex="1" />
+                              <Rectangle fx:id="rect04" arcHeight="10.0" arcWidth="10.0" fill="RED" height="19.0" stroke="#333333" strokeType="INSIDE" strokeWidth="0.0" width="19.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <JFXTextField fx:id="txtFullClassName" focusColor="DODGERBLUE" labelFloat="true" layoutX="11.0" layoutY="177.0" prefHeight="25.0" prefWidth="620.0" promptText="Full Class Name" />
+      <HBox layoutX="274.0" layoutY="147.0" prefHeight="25.0" prefWidth="357.0" spacing="10.0">
+         <children>
+            <JFXButton fx:id="btnAddToList" buttonType="RAISED" layoutX="335.0" layoutY="136.0" prefHeight="25.0" prefWidth="90.0" ripplerFill="BLACK" style="-fx-background-color: #00da7f;" text="Add to List" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRemoveFromList" buttonType="RAISED" layoutX="425.0" layoutY="136.0" prefHeight="25.0" prefWidth="135.0" ripplerFill="BLACK" style="-fx-background-color: #ffb51e;" text="Remove From List" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRemaveAll" buttonType="RAISED" layoutX="539.0" layoutY="136.0" prefHeight="25.0" prefWidth="117.0" ripplerFill="BLACK" style="-fx-background-color: red;" text="Remave All" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <ListView fx:id="lstClassList" layoutX="11.0" layoutY="213.0" prefHeight="263.0" prefWidth="620.0" />
+      <HBox layoutX="11.0" layoutY="531.0" prefHeight="25.0" prefWidth="620.0" spacing="20.0">
+         <children>
+            <JFXTextField fx:id="txtMasterPackage" focusColor="DODGERBLUE" labelFloat="true" layoutX="11.0" layoutY="531.0" prefHeight="25.0" prefWidth="290.0" promptText="Master Package Name" />
+            <JFXTextField fx:id="txtSuperPackage" focusColor="DODGERBLUE" labelFloat="true" layoutX="336.0" layoutY="531.0" prefHeight="25.0" prefWidth="385.0" promptText="Superv Package Names" />
+         </children>
+      </HBox>
+      <HBox layoutX="7.0" layoutY="490.0" prefHeight="17.0" prefWidth="627.0">
+         <children>
+            <JFXCheckBox fx:id="cbxCreateCIP" checkedColor="DODGERBLUE" layoutX="3.0" layoutY="493.0" prefHeight="17.0" prefWidth="274.0" selected="true" text="Create Classes Inside the package" unCheckedColor="DODGERBLUE" />
+            <JFXCheckBox fx:id="cbxHaveSuperPackage" checkedColor="DODGERBLUE" layoutX="274.0" layoutY="493.0" selected="true" text="Have Super Packages" unCheckedColor="DODGERBLUE" />
+         </children>
+      </HBox>
+      <HBox layoutX="13.0" layoutY="577.0" prefHeight="25.0" prefWidth="620.0">
+         <children>
+            <Label layoutX="14.0" layoutY="540.0" prefHeight="30.0" prefWidth="116.0" text="Class Files Location :" />
+            <Label fx:id="lblLocation" layoutX="131.0" layoutY="540.0" prefHeight="25.0" prefWidth="399.0" text="E:\kamal" textFill="#0090ff" underline="true">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnSetLocation" buttonType="RAISED" layoutX="574.0" layoutY="536.0" prefHeight="25.0" prefWidth="104.0" ripplerFill="BLACK" style="-fx-background-color: #00da7f;" text="Set Lacation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btnGeanarate" layoutX="2.0" layoutY="622.0" prefHeight="44.0" prefWidth="636.0" ripplerFill="BLACK" style="-fx-background-color: #1e90ff; -fx-background-radius: 0px;" text="Genarate" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="ani_lblMiniMessage" layoutX="44.0" layoutY="3.0" prefHeight="26.0" prefWidth="592.0" text="Label" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="ani_miniMessageMask" layoutX="16.0" layoutY="3.0" prefHeight="26.0" prefWidth="620.0" style="-fx-background-color: #F5F6F7;" />
+      <Circle fx:id="ani_crlMiniBulb" fill="#ff9d1f" layoutX="20.0" layoutY="17.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <AnchorPane fx:id="dialogPane" layoutX="-367.0" layoutY="211.0" prefHeight="117.0" prefWidth="357.0" style="-fx-background-color: #F5F6F7; -fx-border-width: 0px 4px 0px 4px; -fx-border-color: #FFB51E;" translateX="500.0">
+         <children>
+            <HBox layoutX="18.0" layoutY="5.0" prefHeight="103.0" prefWidth="331.0">
+               <children>
+                  <ProgressIndicator fx:id="prograss" layoutX="14.0" layoutY="8.0" prefHeight="80.0" prefWidth="77.0" progress="0.0" />
+                  <Label layoutX="115.0" layoutY="5.0" prefHeight="102.0" prefWidth="241.0" text="Please wait creating clases" textFill="#ff9d2ed6" wrapText="true">
+                     <padding>
+                        <Insets left="10.0" right="1.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow height="47.69" radius="23.345" width="47.69" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

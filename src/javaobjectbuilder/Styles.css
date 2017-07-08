@@ -1,0 +1,8 @@
+#root{
+    -fx-border-width: 1px;
+    -fx-border-color: white;
+}
+
+#glassPane{
+    -fx-background-color: rgba(0,0,0,.75);
+}
